@@ -1,0 +1,16 @@
+C:\Users\admin\Desktop\DecksSorter\Release\net5.0\DecksSorter.exe
+C:\Users\admin\Desktop\DecksSorter\Release\net5.0\DecksSorter.deps.json
+C:\Users\admin\Desktop\DecksSorter\Release\net5.0\DecksSorter.runtimeconfig.json
+C:\Users\admin\Desktop\DecksSorter\Release\net5.0\DecksSorter.runtimeconfig.dev.json
+C:\Users\admin\Desktop\DecksSorter\Release\net5.0\DecksSorter.dll
+C:\Users\admin\Desktop\DecksSorter\Release\net5.0\ref\DecksSorter.dll
+C:\Users\admin\Desktop\DecksSorter\obj\Release\net5.0\DecksSorter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Desktop\DecksSorter\obj\Release\net5.0\DecksSorter.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\DecksSorter\obj\Release\net5.0\DecksSorter.AssemblyInfo.cs
+C:\Users\admin\Desktop\DecksSorter\obj\Release\net5.0\DecksSorter.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\DecksSorter\obj\Release\net5.0\DecksSorter.dll
+C:\Users\admin\Desktop\DecksSorter\obj\Release\net5.0\ref\DecksSorter.dll
+C:\Users\admin\Desktop\DecksSorter\obj\Release\net5.0\DecksSorter.genruntimeconfig.cache
+C:\Users\admin\Desktop\DecksSorter\obj\Release\net5.0\DecksSorter.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\DecksSorter\Release\net5.0\DecksSorter.pdb
+C:\Users\admin\Desktop\DecksSorter\obj\Release\net5.0\DecksSorter.pdb
