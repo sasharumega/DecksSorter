@@ -1,4 +1,5 @@
-﻿using DecksSorter.Shufflers;
+﻿using DecksSorter.DeckDatabases;
+using DecksSorter.Shufflers;
 using System;
 
 namespace DecksSorter
@@ -7,10 +8,22 @@ namespace DecksSorter
     {
         static void Main()
         {
-            DeckSorter sorter = new DeckSorter(new RealShuffler());
+            var sorter = new DeckSorter(new RealShuffler(), new MemoryBasedDeckDatabase());
             sorter.CreateCardDeck("test_deck");
             sorter.ShuffleCardDeck("test_deck");
             Console.WriteLine(sorter.GetCardDeck("test_deck"));
+
+            sorter.DeleteCardDeck("test_deck");
+
+            sorter.CreateCardDeck("test_deck");
+            sorter.ShuffleCardDeck("test_deck");
+            Console.WriteLine(sorter.GetCardDeck("test_deck"));
+
+            sorter.CreateCardDeck("test_deck2");
+            Console.WriteLine(sorter.GetCardDeck("test_deck2"));
+
+            //sorter.DeleteCardDeck("qfgh397gh389h9fq");
+
             Console.ReadKey();
         }
     }

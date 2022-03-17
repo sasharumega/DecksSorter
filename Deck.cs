@@ -8,10 +8,12 @@ namespace DecksSorter
     public class Deck
     {
         public List<Card> cards = new();
-        readonly IShuffler shuffler;
+        private readonly IShuffler shuffler;
+        public readonly string name;
 
-        public Deck(IShuffler method)
+        public Deck(IShuffler method, string name)
         {
+            this.name = name;
             shuffler = method;
         }
 
@@ -29,8 +31,8 @@ namespace DecksSorter
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder($"Deck size: {cards.Count()}\nCards:");
-            foreach (Card card in cards)
+            var sb = new StringBuilder($"Deck size: {cards.Count}\nCards:");
+            foreach (var card in cards)
                 sb.Append($"\n{card}");
 
             return sb.ToString();

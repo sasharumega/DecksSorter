@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DecksSorter.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,59 +7,46 @@ namespace DecksSorter
 {
     public class DeckSorter : IDeckSorter
     {
-        public Dictionary<string, Deck> decks = new();
-        readonly IShuffler shuffler;
+        
+        private readonly IShuffler shuffler;
+        private readonly IDeckDatabase deckDatabase;
 
-        public DeckSorter(IShuffler shuffler)
+        public DeckSorter(IShuffler shuffler, IDeckDatabase deckDatabase)
         {
             this.shuffler = shuffler;
+            this.deckDatabase = deckDatabase;
         }
 
         public void CreateCardDeck(string name)
         {
-            if (decks.ContainsKey(name))
-                throw new Exception("Колода с таким именем уже существует");
-
-            Deck deck = new Deck(shuffler);
+            var deck = new Deck(shuffler, name);
             deck.FillWithCards();
-            decks.Add(name, deck);
+            deckDatabase.AddDeck(deck);
         }
 
         public void DeleteCardDeck(string name)
         {
-            if (!decks.ContainsKey(name))
-                throw new Exception("Колоды с таким именем не существует");
-
-            decks.Remove(name);
+            deckDatabase.DeleteDeck(name);
         }
 
         public Deck GetCardDeck(string name)
         {
-            if (!decks.ContainsKey(name))
-                throw new Exception("Колоды с таким именем не существует");
-
-            return decks[name];
+            return deckDatabase.GetDeck(name);
         }
 
         public List<string> GetDecksNames()
         {
-            return decks.Keys.ToList();
+            return deckDatabase.GetAllDecks().Select(d => d.name).ToList();
         }
 
         public void ShuffleCardDeck(string name)
         {
-            if (!decks.ContainsKey(name))
-                throw new Exception("Колоды с таким именем не существует");
-
-            decks[name].ShuffleDeck();
+            deckDatabase.GetDeck(name).ShuffleDeck();
         }
-        
-
-
 
         public override string ToString()
         {
-            return $"Total decks of cards: {decks.Count}";
+            return $"Total decks of cards: {deckDatabase.GetAllDecks().Count}";
         }
     }
 }
